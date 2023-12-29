@@ -18,8 +18,8 @@ class CConexion
             echo ("No se puede conectar a la base de datos, $e ");
         }
         ///
-// comentario .....
-////proyecto //
+
+        
 
 =======
        try {
