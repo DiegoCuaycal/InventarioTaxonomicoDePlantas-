@@ -8,7 +8,7 @@ class CConexion
         $username = "postgres";
         $password = "Diego";
 
-        $conn = null;  // Asegúrate de declarar $conn antes del bloque try-catch
+        $conn = null;  
 
         try {
             $conn = new PDO("pgsql:host=$host; dbname=$dbname", $username, $password);

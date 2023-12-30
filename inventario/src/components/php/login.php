@@ -191,15 +191,11 @@
 
 <body>
   <?php
+  
   include_once("conexion.php");
-
-  // Crear una instancia de CConexion
   $conexion = new CConexion();
-
-  // Llamar al método ConexionBD en la instancia creada
   $conn = $conexion->ConexionBD();
 
-  // ...haz algo con la conexión $conn si es necesario...
   ?>
   <main>
     <div class="contenedor__todo">
