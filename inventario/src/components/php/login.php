@@ -225,7 +225,7 @@
           <button>Entrar</button>
         </form>
 
-        <form action="php/registro.php" class="formulario__register">
+        <form action="registro.php" method="POST" class="formulario__register">
           <h2>Regístrarse</h2>
           <input type="text" placeholder="Nombre completo" name="nombre_completo" />
           <input type="text" placeholder="Correo Electronico" name="correo" />
@@ -238,73 +238,81 @@
   </main>
 
   <script>
-    //Ejecutando funciones
+    // Ejecutando funciones
     document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
     document.getElementById("btn__registrarse").addEventListener("click", register);
     window.addEventListener("resize", anchoPage);
 
-    //Declarando variables
+    // Declarando variables
     var formulario_login = document.querySelector(".formulario__login");
     var formulario_register = document.querySelector(".formulario__register");
     var contenedor_login_register = document.querySelector(".contenedor__login-register");
     var caja_trasera_login = document.querySelector(".caja__trasera-login");
     var caja_trasera_register = document.querySelector(".caja__trasera-register");
 
-    //FUNCIONES
+    // FUNCIONES
 
     function anchoPage() {
+        console.log("Ancho de la página: " + window.innerWidth);
 
-      if (window.innerWidth > 850) {
-        caja_trasera_register.style.display = "block";
-        caja_trasera_login.style.display = "block";
-      } else {
-        caja_trasera_register.style.display = "block";
-        caja_trasera_register.style.opacity = "1";
-        caja_trasera_login.style.display = "none";
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_register.style.display = "none";
-      }
+        if (window.innerWidth > 850) {
+            console.log("Mostrar caja trasera y formulario en pantalla ancha");
+            caja_trasera_register.style.display = "block";
+            caja_trasera_login.style.display = "block";
+        } else {
+            console.log("Mostrar caja trasera y formulario en pantalla estrecha");
+            caja_trasera_register.style.display = "block";
+            caja_trasera_register.style.opacity = "1";
+            caja_trasera_login.style.display = "none";
+            formulario_login.style.display = "block";
+            contenedor_login_register.style.left = "0px";
+            formulario_register.style.display = "none";
+        }
     }
 
-    anchoPage();
-
-
     function iniciarSesion() {
-      if (window.innerWidth > 850) {
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "10px";
-        formulario_register.style.display = "none";
-        caja_trasera_register.style.opacity = "1";
-        caja_trasera_login.style.opacity = "0";
-      } else {
-        formulario_login.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_register.style.display = "none";
-        caja_trasera_register.style.display = "block";
-        caja_trasera_login.style.display = "none";
-      }
+        console.log("Iniciar sesión");
+        if (window.innerWidth > 850) {
+            console.log("Mostrar formulario de inicio de sesión en pantalla ancha");
+            formulario_login.style.display = "block";
+            contenedor_login_register.style.left = "10px";
+            formulario_register.style.display = "none";
+            caja_trasera_register.style.opacity = "1";
+            caja_trasera_login.style.opacity = "0";
+        } else {
+            console.log("Mostrar formulario de inicio de sesión en pantalla estrecha");
+            formulario_login.style.display = "block";
+            contenedor_login_register.style.left = "0px";
+            formulario_register.style.display = "none";
+            caja_trasera_register.style.display = "block";
+            caja_trasera_login.style.display = "none";
+        }
     }
 
     function register() {
-      if (window.innerWidth > 850) {
-        formulario_register.style.display = "block";
-        contenedor_login_register.style.left = "410px";
-        formulario_login.style.display = "none";
-        caja_trasera_register.style.opacity = "0";
-        caja_trasera_login.style.opacity = "1";
-      } else {
-        formulario_register.style.display = "block";
-        contenedor_login_register.style.left = "0px";
-        formulario_login.style.display = "none";
-        caja_trasera_register.style.display = "none";
-        caja_trasera_login.style.display = "block";
-        caja_trasera_login.style.opacity = "1";
-      }
+        console.log("Registrarse");
+        if (window.innerWidth > 850) {
+            console.log("Mostrar formulario de registro en pantalla ancha");
+            formulario_register.style.display = "block";
+            contenedor_login_register.style.left = "410px";
+            formulario_login.style.display = "none";
+            caja_trasera_register.style.opacity = "0";
+            caja_trasera_login.style.opacity = "1";
+        } else {
+            console.log("Mostrar formulario de registro en pantalla estrecha");
+            formulario_register.style.display = "block";
+            contenedor_login_register.style.left = "0px";
+            formulario_login.style.display = "none";
+            caja_trasera_register.style.display = "none";
+            caja_trasera_login.style.display = "block";
+            caja_trasera_login.style.opacity = "1";
+        }
 
-      //Comentario///
+        // Comentario///
+       
     }
-  </script>
+</script>
+
 
 </body>
 
